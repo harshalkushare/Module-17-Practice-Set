@@ -1,0 +1,95 @@
+Q1. Create an arrow function called square that takes a number as an argument and returns its square. Use the arrow function to calculate the square of a given number and display the result.
+Answer:
+const square = (num) => num * num;
+console.log(square(5));
+
+Q2. The following is an array of 10 students ages:
+Answer:
+const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24];
+// Sort the array and find the min and max age
+ages.sort((a, b) => a - b);
+console.log("Min:", ages[0]);
+console.log("Max:", ages[ages.length - 1]);
+// Find the median age
+let median = 0;
+if (ages.length % 2 === 0) {
+  median = (ages[4] + ages[5]) / 2;
+} else {
+  median = ages[Math.floor(ages.length / 2)];
+}
+console.log("Median:", median);
+// Find the average age
+let sum = ages.reduce((acc, val) => acc + val, 0);
+let average = sum / ages.length;
+console.log("Average:", average);
+// Find the range of the ages
+let range = ages[ages.length - 1] - ages[0];
+console.log("Range:", range);
+// Compare values
+console.log("Min - Average:", Math.abs(ages[0] - average));
+console.log("Max - Average:", Math.abs(ages[ages.length - 1] - average));
+
+Q3. Create a Map to store contact information (name, age, email, location) and implement a function to retrieve contact details by name.
+Answer:
+let contacts = new Map();
+contacts.set("Amit", { age: 25, email: "amit@example.com", location: "Delhi" });
+contacts.set("Neha", { age: 22, email: "neha@example.com", location: "Mumbai" });
+function getContact(name) {
+  return contacts.get(name);
+}
+console.log(getContact("Amit"));
+
+Q4. Create two objects person1 and person2 with properties name and age. Create a function “introduce” that prints "Hello, I'm [name], and I'm [age] years old." Use the call method to make person2 introduce itself using the introduce function.
+Answer:
+let person1 = { name: "Amit", age: 25 };
+let person2 = { name: "Neha", age: 22 };
+function introduce() {
+  console.log(`Hello, I'm ${this.name}, and I'm ${this.age} years old.`);
+}
+introduce.call(person2);
+
+Q5. You are developing a program to manage a list of unique items. Write a JavaScript program that uses a Set to store a collection of unique numbers. Use the Map object to associate each number with its square. Finally, print both the unique numbers and their corresponding squares.
+Answer:
+let numbers = new Set([1, 2, 3, 2, 4, 5, 3]);
+let squares = new Map();
+numbers.forEach(num => {
+  squares.set(num, num * num);
+});
+squares.forEach((value, key) => {
+  console.log(`${key} => ${value}`);
+});
+
+Q6.
+Answer:
+function displayInfo(name, role) {
+  console.log(`${name} is a ${role}`);
+}
+displayInfo.call(null, "Amit", "Developer");
+displayInfo.apply(null, ["Neha", "Designer"]);
+function greet() {
+  console.log(`Hello, ${this.name}`);
+}
+let person = { name: "Rahul" };
+let boundGreet = greet.bind(person);
+boundGreet();
+
+Q7. Tasks:
+Answer:
+let calculator = {
+  add: (a, b) => a + b,
+  subtract: (a, b) => a - b,
+  multiply: (a, b) => a * b,
+  calculate: function (operation, a, b) {
+    return this[operation](a, b);
+  }
+};
+console.log(calculator.calculate.call(calculator, "add", 5, 3));
+console.log(calculator.calculate.apply(calculator, ["multiply", 4, 2]));
+let discountCalculator = {
+  discount: 10,
+  applyDiscount: function (amount) {
+    return amount - (amount * this.discount) / 100;
+  }
+};
+let calculateDiscount = discountCalculator.applyDiscount.bind(discountCalculator);
+console.log(calculateDiscount(200));
