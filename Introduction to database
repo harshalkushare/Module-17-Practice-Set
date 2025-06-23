@@ -1,0 +1,61 @@
+1. What is a database? Explain with an example on why should we need a database.
+A database is a structured collection of data that can be easily accessed, managed, and updated.
+Example: In a college, storing student records like name, roll number, and marks in an Excel sheet becomes difficult as data grows. Using a database like MySQL allows easy searching, updating, and managing of student records.
+Need: We need a database to avoid data redundancy, ensure data consistency, and enable quick data retrieval.
+
+2. Write a short note on file based storage system. Explain the major challenges of a file based storage system.
+A file-based storage system stores data in individual files and folders without any centralized control.
+Challenges:
+Data redundancy
+Data inconsistency
+Difficulty in accessing related data
+Lack of data security
+No support for concurrent access
+
+3. What is DBMS? What was the need for DBMS?
+DBMS (Database Management System) is software that manages databases and provides an interface to interact with data.
+Need for DBMS:
+To eliminate redundancy
+To ensure data consistency
+To provide data security and access control
+To support multi-user environment and concurrency
+To easily retrieve and manipulate data
+
+4. Explain 5 challenges of file-based storage system which was tackled by DBMS?
+Data Redundancy: DBMS avoids duplicate data using normalization.
+Data Inconsistency: Changes made in one place reflect across the database.
+Data Isolation: DBMS allows relational data to be accessed together.
+Security Issues: DBMS provides access control mechanisms.
+Concurrency Access: Multiple users can access data simultaneously in DBMS.
+
+5. List Out the different types of classification in DBMS and explain?
+Based on Data Model:
+Hierarchical DBMS
+Network DBMS
+Relational DBMS
+Object-oriented DBMS
+Based on Number of Users:
+Single-user
+Multi-user
+Based on Location:
+Centralized DBMS
+Distributed DBMS
+
+6. What is the significance of Data Modelling and explain the types of Data Modelling?
+Significance:
+Data modeling defines how data is connected, stored, and processed. It helps in database design and consistency.
+Types:
+Conceptual Model: High-level, focuses on what data is stored.
+Logical Model: Defines structure like tables, columns.
+Physical Model: Details how data is stored physically on the system.
+
+7. Explain 3 schema architecture along with its advantages?
+Three Schema Architecture:
+External Schema: User view of data.
+Conceptual Schema: Logical structure of data.
+Internal Schema: Physical storage structure.
+Advantages:
+Data abstraction
+Separation of user and physical data
+Easier maintenance and modification
+Better data security
