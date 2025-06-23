@@ -1,0 +1,73 @@
+1. You are starting a new JavaScript project and need to set up version control.
+Task-1:
+git init
+
+Task-2:
+echo "// simple function" > script.js
+
+Task-3:
+git add script.js  
+git commit -m "Initial commit with simple JavaScript function"
+
+2.
+Task-1:
+git branch feature-greeting
+
+Task-2:
+git checkout feature-greeting
+
+Task-3:
+// In script.js
+function greeting(name) {
+  console.log("Hello, " + name + "!");
+}
+
+Task-4:
+git add script.js  
+git commit -m "Add personalized greeting function"
+
+Task-5:
+git checkout main  
+git merge feature-greeting
+
+Task-6:
+git checkout main
+
+3.
+Task-1:
+Go to GitHub → Create New Repository.
+
+Task-2:
+git remote add origin <your-repo-url>  
+git push -u origin main
+
+Task-3:
+On GitHub → Go to "Settings" → "Collaborators" → Invite your team member.
+
+Task-4:
+Your team member runs:
+git clone <your-repo-url>
+
+Task-5:
+git fetch origin  
+git merge origin/main
+
+4.
+git checkout -b feature-update  
+# Make changes to script.js  
+git add script.js  
+git commit -m "Feature update changes"
+git checkout main  
+# Make different changes to script.js  
+git add script.js  
+git commit -m "Main branch changes"
+git merge feature-update  
+# Resolve merge conflicts if any
+
+5.
+echo "// obsolete file" > obsolete.js  
+git add obsolete.js  
+git commit -m "Add obsolete.js"
+git rm obsolete.js  
+git commit -m "Remove obsolete.js"
+git revert HEAD
