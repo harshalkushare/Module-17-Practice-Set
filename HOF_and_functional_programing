@@ -1,0 +1,71 @@
+Q1. You are building an e-commerce website. Write a function that calculates the total price of a customer’s order. You're given an array of items, each with a price property. Use the forEach method to iterate through the array and sum up the prices to get the total order amount.
+Answer:
+const ordersList = [
+  { name: "Laptop", price: 120000 },
+  { name: "Mobile", price: 70000 },
+  { name: "Mobile Charger", price: 1500 },
+  { name: "Laptop Charger", price: 10500 }
+];
+let total = 0;
+ordersList.forEach(item => {
+  total += item.price;
+});
+console.log("The total price is Rs." + total);
+
+Q2. In this challenge, your task is to create a function that generates a random number and prints it to the console every 2 seconds.
+Answer:
+function generateRandom() {
+  setInterval(() => {
+    console.log(Math.floor(Math.random() * 100));
+  }, 2000);
+}
+generateRandom();
+
+Q3. You are given an array of expense objects representing monthly expenses. Each object has properties, amount and category. Use the map method to create a new array that includes the calculated tax for each expense. Assume a tax rate of 10%.
+Answer:
+let expenses = [
+  { amount: 100, category: "Utilities" },
+  { amount: 200, category: "Groceries" },
+  { amount: 50, category: "Entertainment" }
+];
+let taxedExpenses = expenses.map(exp => ({
+  ...exp,
+  tax: exp.amount * 0.10
+}));
+console.log(taxedExpenses);
+
+Q4. Using the same array of expense objects, use the filter method to create a new array that includes only the expenses related to the category "Groceries."
+Answer:
+let groceries = expenses.filter(exp => exp.category === "Groceries");
+console.log(groceries);
+
+Q5. Using the same array of expense objects, use the reduce method to calculate the total amount of all expenses.
+Answer:
+let totalExpenses = expenses.reduce((sum, exp) => sum + exp.amount, 0);
+console.log(totalExpenses);
+
+Q6. You have a list of expenses, each with an amount and a category. Now, create a function named categorizeExpense that returns either "High Expense" if more than 100, or "Low Expense" otherwise. Use this function with map to generate a new array called categorizedExpenses and print the result.
+Answer:
+function categorizeExpense(amount) {
+  return amount > 100 ? "High Expense" : "Low Expense";
+}
+let categorizedExpenses = expenses.map(exp => categorizeExpense(exp.amount));
+console.log("Categorized Expenses:", categorizedExpenses);
+
+Q7. Consider an array of numbers named originalNumbers with the values [2, 5, 8, 10, 3]. Your task is to use the forEach method to iterate through each element in the array. During the iteration, double the value of each number. After completing the iteration, display the modified array.
+Answer:
+let originalNumbers = [2, 5, 8, 10, 3];
+originalNumbers.forEach((num, index, arr) => {
+  arr[index] = num * 2;
+});
+console.log(originalNumbers);
+
+Q8. Using the same array of numbers, use the forEach method to collect and store only the even numbers in a new array.
+Answer:
+let evenNumbers = [];
+originalNumbers.forEach(num => {
+  if (num % 2 === 0) {
+    evenNumbers.push(num);
+  }
+});
+console.log(evenNumbers);
